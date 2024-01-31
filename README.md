@@ -4,7 +4,7 @@ Enhancing Narrative Creation Through Voice Recognition and NLP.  Implementation 
 ## Project idea
 This project introduces an approach to narrative creation by integrating voice recognition
 technology with advanced Natural Language Processing (NLP) techniques. Our system allows
-users to orally narrate dialogues, which are then seamlessly transcribed and formatted into
+users to orally supply dialogues, which are then seamlessly transcribed and formatted into
 well-structured novel paragraphs. The system not only transcribes verbatim speech but also
 employs NLP to enhance the text with appropriate punctuation, dialogue tags, and paragraph
 breaks, reflecting the nuances of written storytelling. The sentiments of the original dialogue is
