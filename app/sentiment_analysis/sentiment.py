@@ -121,8 +121,8 @@ def begin_sentiment_analysis(input_from_speech):
                 values=(token,final_sentiment_value)
                 final_list.append(values)
 
-        #return final_list
-        print(final_list)
+        return final_list
+        # print(final_list)
 
 
     except Exception as e:
