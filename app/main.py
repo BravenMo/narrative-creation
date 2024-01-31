@@ -10,7 +10,7 @@ def main():
     """
 
     try:
-        mytext=speech_recognition_main("D:\\VIT sem 6\\BCSE409L Natural Language Processing Theory\\project\\final project\\narrative-creation\\resources\\OSR_us_000_0061_8k.wav")
+        mytext=speech_recognition_main("D:\\college\\NLP - BCSE409L\\project\\narrative-creation\\resources\\OSR_us_000_0061_8k.wav")
         print(mytext)
 
     except Exception as e:
