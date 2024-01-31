@@ -1,1 +1,6 @@
-
+SpeechRecognition==3.10.1
+python-json-logger==2.0.7
+nltk==3.8.1
+transformers==4.37.1
+soundfile==0.12.1
+openai==0.28.0
