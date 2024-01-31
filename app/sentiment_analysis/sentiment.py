@@ -9,12 +9,6 @@ import re
 # Configuring logging 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-#Download necessary resources from NLTK
-#nltk.download('vader_lexicon')
-#nltk.download('punkt')
-#nltk.download('wordnet')
-#nltk.download('stopwords')
-
 def preprocess_text(text):
     """
     Preprocess the given text by tokenizing, removing stopwords, and lemmatizing.
@@ -122,7 +116,7 @@ def begin_sentiment_analysis(input_from_speech):
                 final_list.append(values)
 
         return final_list
-        # print(final_list)
+
 
 
     except Exception as e:
