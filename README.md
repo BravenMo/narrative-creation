@@ -21,6 +21,9 @@ sentiment generates a paragraph based on the tokens of the original dialogue whi
 transcribed and formatted for purposes such as writing a novel. Following are each of the
 modules with the methodology used in each.
 
+![image](https://github.com/BravenMo/narrative-creation/assets/91548058/5da38007-ede1-4bdf-8bb7-2d6c0ece053c)
+
+
 ## Resources used
 1. https://huggingface.co/openai/whisper-medium
 2. https://platform.openai.com/docs/models/gpt-3-5
