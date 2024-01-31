@@ -10,10 +10,10 @@ import re
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 #Download necessary resources from NLTK
-nltk.download('vader_lexicon')
-nltk.download('punkt')
-nltk.download('wordnet')
-nltk.download('stopwords')
+#nltk.download('vader_lexicon')
+#nltk.download('punkt')
+#nltk.download('wordnet')
+#nltk.download('stopwords')
 
 def preprocess_text(text):
     """
@@ -121,11 +121,15 @@ def begin_sentiment_analysis(input_from_speech):
                 values=(token,final_sentiment_value)
                 final_list.append(values)
 
-        return final_list
+        #return final_list
+        print(final_list)
 
 
     except Exception as e:
         logging.error(f"An error occurred: {e}")
+
+
+begin_sentiment_analysis("I like you a little bit")
     
 
 
