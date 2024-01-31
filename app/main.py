@@ -1,7 +1,9 @@
 from speech_recognition.speech_recognition import run as speech_recognition_main
 from sentiment_analysis.sentiment import begin_sentiment_analysis as sentiment_analysis_main
 from text_generation.text_generator import run as text_generation_main
+from termcolor import colored
 import logging
+
 
 # Setting up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -10,26 +12,27 @@ def main():
     """
     Main function of the application
     """
-
     try:
-        mytext=speech_recognition_main("D:\\college\\NLP - BCSE409L\\project\\narrative-creation\\resources\\OSR_us_000_0061_8k.wav")
+        # Speech Recognition
+        logging.info("Speech Recognition Started")
+        audio_file_path = "path-to-audio-file"
+        mytext = speech_recognition_main(audio_file_path)
         logging.info("Speech Recognition Done")
-        # print(mytext)
+        print(colored(mytext, 'green'))
+
+        # Sentiment Analysis
         logging.info("Sentiment Analysis Started")
         tokens_with_sentiment = sentiment_analysis_main(mytext)
         logging.info("Sentiment Analysis Finished")
-        # print(tokens_with_sentiment)
+        print(colored(tokens_with_sentiment, 'green'))
+
+        # Text Generation
         logging.info("Text Generation Started")
-        generated_text = text_generation_main(tokens_with_sentiment, "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")
+        api_key = "openai-api-key"
+        generated_text = text_generation_main(tokens_with_sentiment, api_key)
         logging.info("Text Generation Finished")
-        print(generated_text)
+        print(colored(generated_text, 'green'))   
         
-
-        
-        
-        
-        
-
     except Exception as e:
         logging.error(f"An error occurred: {e}")
 
