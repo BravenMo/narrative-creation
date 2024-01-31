@@ -9,7 +9,7 @@ import re
 # Configuring logging 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Download necessary resources from NLTK
+#Download necessary resources from NLTK
 nltk.download('vader_lexicon')
 nltk.download('punkt')
 nltk.download('wordnet')
@@ -79,6 +79,24 @@ def split_sentence(text):
     split_sentences = [sentence.strip() for sentence in split_sentences if sentence.strip()]
     return split_sentences
 
+def maxsentiment(sentiment_value):
+    """
+    Function used to calculate the maximum sentiment between positive, negative and neutral
+    Args:
+        sentiment_values: All the sentiment values including positive, negative and neutral
+    
+    Returns:
+        max_positive and max_negative sentiment value
+    """
+    pos_value=sentiment_value['pos']
+    neg_value=sentiment_value['neg']
+    neu_value=sentiment_value['neu']
+    if neu_value>pos_value and neu_value>neg_value:
+        return neu_value
+    elif pos_value>neg_value:
+        return pos_value
+    else:
+        return (-neg_value)
 
 def begin_sentiment_analysis(input_from_speech):
     """
@@ -86,7 +104,7 @@ def begin_sentiment_analysis(input_from_speech):
     Args:
         input_from_speech (str): The text form of the speech inputted from the previous module
     
-    Retunrs:
+    Returns:
         List of tuples of tokens and their appropriate sentiment values
     """
     try:
@@ -97,16 +115,18 @@ def begin_sentiment_analysis(input_from_speech):
         for sentence in sentences:
             pre_sentence=preprocess_text(sentence)
             sentiment_value=get_sentiment(pre_sentence)
+            final_sentiment_value=maxsentiment(sentiment_value)
             tokens=tokenize(pre_sentence)
             for token in tokens:
-                values=(token,sentiment_value)
+                values=(token,final_sentiment_value)
                 final_list.append(values)
-        
-        #TODO: Work still to be done to properly send sentiment values.
-        #return final_list
+
+        return final_list
+
 
     except Exception as e:
         logging.error(f"An error occurred: {e}")
+    
 
 
 
