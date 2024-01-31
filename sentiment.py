@@ -128,8 +128,6 @@ def begin_sentiment_analysis(input_from_speech):
     except Exception as e:
         logging.error(f"An error occurred: {e}")
 
-
-begin_sentiment_analysis("I like you a little bit")
     
 
 
